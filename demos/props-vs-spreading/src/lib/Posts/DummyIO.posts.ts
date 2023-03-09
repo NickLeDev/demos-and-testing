@@ -8,7 +8,7 @@ export type DummyIOPostsType = {
   limit: number;
 }
 
-export default class DummyIOPosts implements Posts{
+export default class DummyIOPosts implements Posts {
   limit = 10;
   list = [];
   page = 0;
@@ -21,7 +21,7 @@ export default class DummyIOPosts implements Posts{
     this.page = DummyIOData?.page ?? this.page;
   }
 
-  public static async fetch(limit: number = 0) {
+  async fetch(limit: number = 0) {
     const data = await get(`https://dummyapi.io/data/v1/post?limit=${limit}`).then(response => response.json());
     return new DummyIOPosts(data);
   }

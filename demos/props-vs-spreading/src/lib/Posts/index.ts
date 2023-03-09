@@ -7,13 +7,13 @@ export type PostsType = {
   limit: number;
 }
 
-export abstract class Posts {
-  public list: Array<any> = [];
-  public total: number = 0;
-  public page: number = 0;
-  public limit: number = 0;
+export interface Posts {
+  list: Array<any>;
+  total: number;
+  page: number;
+  limit: number;
 
-  public static async fetch() {}
+  fetch(): Promise<PostsType>;
 }
 
 
