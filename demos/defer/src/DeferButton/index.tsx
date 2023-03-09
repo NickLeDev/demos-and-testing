@@ -1,9 +1,16 @@
 import Defer, { IDeferProps } from "../../../packages/shared/Defer";
 
-export default function DeferButton({ children, fallback, a11yText, predicate, onClick }: IDeferProps & { onClick: () => void }) {
-  const buttonA11yText = predicate ? `En chargement de l'épisode ${a11yText}` : `Prêt à jouer l'épisode ${a11yText}`;
+export default function DeferButton({
+                                      children,
+                                      fallback,
+                                      loadingText,
+                                      predicate,
+                                      onClick
+                                    }: IDeferProps & { onClick: () => void }) {
 
-  return <button onClick={onClick}><Defer fallback={fallback} predicate={predicate} a11yText={buttonA11yText}>
-    {children}
-  </Defer></button>
+  return <button onClick={onClick} disabled={predicate}>
+    <Defer fallback={fallback} predicate={predicate} loadingText={loadingText}>
+      {children}
+    </Defer>
+  </button>
 }

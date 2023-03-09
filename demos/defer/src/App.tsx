@@ -6,11 +6,10 @@ import DeferButton from "./DeferButton";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-
   return (
     <div className="App">
-      <div>
-        <Defer a11yText={"Chargement des informations de votre compte"} predicate={isLoading}
+       <div>
+        <Defer loadingText={{ onLoad: "Chargement de votre compte", onLoaded: "Les informations du compte on été chargées"}} predicate={isLoading}
                fallback={<div>... Loading</div>}>
           <div>
             <h2>Votre compte</h2>
@@ -21,7 +20,7 @@ function App() {
       </div>
 
       <div style={{ marginTop: "50px" }}>
-        <DeferButton predicate={isLoading} fallback={<span>...</span>} a11yText={"District 31"} onClick={() => {
+        <DeferButton predicate={isLoading} fallback={<span>...</span>} loadingText={{ onLoad: "Chargement du média", onLoaded: "Média prêt" }} onClick={() => {
           setIsLoading(!isLoading);
         }}>
           ▶️
