@@ -1,32 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import React, { useState } from 'react'
+import Defer from '../../packages/shared/Defer';
 import './App.css'
+import DeferButton from "./DeferButton";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoading, setIsLoading] = useState(true);
+
 
   return (
     <div className="App">
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Defer a11yText={"Chargement des informations de votre compte"} predicate={isLoading}
+               fallback={<div>... Loading</div>}>
+          <div>
+            <h2>Votre compte</h2>
+            <p>Nicolas Trudel</p>
+            <p>Abonné depuis 2020</p>
+          </div>
+        </Defer>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      <div style={{ marginTop: "50px" }}>
+        <DeferButton predicate={isLoading} fallback={<span>...</span>} a11yText={"District 31"} onClick={() => {
+          setIsLoading(!isLoading);
+        }}>
+          ▶️
+        </DeferButton>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
