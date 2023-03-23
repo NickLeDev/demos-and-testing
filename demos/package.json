@@ -1,9 +1,14 @@
 {
-  "name": "demos-monorepo",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "turbo run dev"
-  },
-  "workspaces": ["packages", "defer", "props-vs-spreading"]
+    "name": "demos-monorepo",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "turbo run dev"
+    },
+    "workspaces": [
+        "packages",
+        "defer",
+        "props-vs-spreading",
+        "use-rfc"
+    ]
 }
