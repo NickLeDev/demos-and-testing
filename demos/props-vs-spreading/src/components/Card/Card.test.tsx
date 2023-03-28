@@ -12,7 +12,7 @@ const setup = (props?: any) => {
 describe('Card', () => {
   it('Should display default values if no props', () => {
     setup();
-    const title = screen.getByText("Default title");
+    const title = screen.getByText("Default text");
     expect(title).toBeInTheDocument();
 
   })

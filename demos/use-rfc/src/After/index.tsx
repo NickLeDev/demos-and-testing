@@ -11,7 +11,6 @@ export default function After() {
     setLoadData(true);
   }, []);
 
-
   return <>
     <h1>After - composition</h1>
     <ErrorBoundary fallback={AfterError()}>

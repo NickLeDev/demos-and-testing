@@ -9,6 +9,7 @@
         "packages",
         "defer",
         "props-vs-spreading",
-        "use-rfc"
+        "use-rfc",
+        "memo"
     ]
 }

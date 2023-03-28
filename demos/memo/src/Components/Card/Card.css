@@ -1,0 +1,11 @@
+.card {
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 20px 15px;
+    transition: background-color 1000ms;
+    max-width: 200px;
+}
+
+.card--rendered {
+    background-color: darkseagreen;
+}

@@ -1,0 +1,11 @@
+.turbo_title {
+    padding: 3px 6px;
+    background-color: hotpink;
+    border-radius: 10px;
+    color: white;
+    transition: background-color 300ms;
+}
+
+.turbo_title--rendered {
+    background-color: purple;
+}

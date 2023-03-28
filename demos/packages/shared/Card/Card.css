@@ -1,0 +1,10 @@
+.card {
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 20px 15px;
+    transition: background-color 300ms;
+}
+
+.card--rendered {
+    background-color: darkseagreen;
+}

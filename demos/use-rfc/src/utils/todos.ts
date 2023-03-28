@@ -11,6 +11,7 @@ total: number
 };
 
 export async function getTodos(): Promise<Todos> {
-  //return Promise.reject();
+  // return Promise.reject();
+  console.log("=== getTodos");
   return fetch('https://dummyjson.com/todos').then(res => res.json());
 }
